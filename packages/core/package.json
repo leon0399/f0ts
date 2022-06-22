@@ -1,0 +1,33 @@
+{
+  "name": "@f0ts/core",
+  "version": "0.0.1",
+  "description": "Factoria F0 TypeScript helpers",
+  "keywords": [
+    "eth",
+    "ethereum",
+    "dapps",
+    "web3"
+  ],
+  "sideEffects": false,
+  "main": "dist/f0ts-core.cjs.js",
+  "module": "dist/f0ts-core.esm.js",
+  "types": "dist/f0ts-core.cjs.d.ts",
+  "exports": {
+    "./package.json": "./package.json"
+  },
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "ethers": ">=5.5.1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "ethers": "^5.6.5"
+  },
+  "author": "Leonid Meleshin <hello@leon0399.ru> (https://leon0399.ru)",
+  "license": "MIT",
+  "private": false
+}
