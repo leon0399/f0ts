@@ -23,7 +23,10 @@
   "peerDependencies": {
     "ethers": ">=5.5.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.2.32"
+  },
   "devDependencies": {
     "ethers": "^5.6.5"
   },
