@@ -6,7 +6,10 @@
     "lint": "eslint . --cache",
     "lint:fix": "pnpm lint --fix",
     "lint:format": "prettier --write",
-    "lint:types": "tsc --noEmit"
+    "lint:types": "tsc --noEmit",
+    "test": "jest --coverage",
+    "test:ci": "start-server-and-test hardhat:dev http://127.0.0.1:8545 test",
+    "test:watch": "jest --watch"
   },
   "preconstruct": {
     "packages": [
@@ -31,6 +34,7 @@
     "@ethersproject/providers": "^5.6.5",
     "@nomiclabs/hardhat-ethers": "^2.0.6",
     "@preconstruct/cli": "^2.1.5",
+    "@swc-node/jest": "^1.5.2",
     "@typechain/ethers-v5": "^10.1.0",
     "@types/eslint": "^8.4.3",
     "@types/jest": "^27.5.0",
