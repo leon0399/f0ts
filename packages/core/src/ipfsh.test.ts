@@ -11,6 +11,10 @@ describe('ipfsh', () => {
         '0x544a64a6d099811ba64f16d10bef48767284ec9a3447b322c70a35d64a1b3878',
       )
     })
+
+    it('transforms empty CID to empty digest', () => {
+      expect(cidToDigest('')).toEqual('0x00')
+    })
   })
 
   describe('Digest to CID', () => {
@@ -20,6 +24,10 @@ describe('ipfsh', () => {
           '0x544a64a6d099811ba64f16d10bef48767284ec9a3447b322c70a35d64a1b3878',
         ),
       ).toEqual('bafkreicujjsknuezqen2mtyw2ef66sdwokcozgrui6zsfrykgxleugzypa')
+    })
+
+    it('transforms empty digest to empty CID', () => {
+      expect(digestToCid('0x00')).toEqual('')
     })
   })
 })

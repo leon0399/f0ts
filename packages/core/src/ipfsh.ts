@@ -2,6 +2,10 @@ import { CID } from 'multiformats/cid'
 import { create } from 'multiformats/hashes/digest'
 
 export const digestToCid = (hex: string) => {
+  if (hex === '0x00') {
+    return ''
+  }
+
   const arr = new Uint8Array(
     hex
       .slice(2)
