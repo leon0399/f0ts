@@ -2,3 +2,4 @@
 /* tslint:disable */
 /* eslint-disable */
 export { F0__factory } from "./F0__factory";
+export { F0Factory__factory } from "./F0Factory__factory";
