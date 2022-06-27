@@ -73,7 +73,8 @@
     "CHANGELOG.md",
     "build",
     "dist",
-    "node_modules"
+    "node_modules",
+    "packages/core/src/types/ethers-contracts/*"
   ],
   "settings": {
     "import/parsers": {
