@@ -40,10 +40,14 @@ export class F0MintResponse {
 
 export class F0 {
   readonly contract: F0Contract
-  data: F0Data | undefined
+  #data?: F0Data
 
   constructor(contract: F0Contract) {
     this.contract = contract
+  }
+
+  getData() {
+    return this.#data
   }
 
   async fetch() {
@@ -53,22 +57,25 @@ export class F0 {
       this.invites(),
     ])
 
-    this.data = {
+    this.#data = {
       name,
       symbol,
       invites,
     }
 
-    return this.data
+    return this.#data
   }
 
   protected async invites(): Promise<Invite[]> {
-    const inviteEvents = await this.contract.queryFilter(
-      this.contract.filters.Invited(),
-    )
+    const filter = this.contract.filters.Invited()
+    const inviteEvents = await this.contract.queryFilter(filter)
+
+    const uniqueInvites = [
+      ...new Map(inviteEvents.map((event) => [event.args.key, event])).values(),
+    ]
 
     return await Promise.all(
-      inviteEvents.map(async (event) => {
+      uniqueInvites.map(async (event) => {
         const condition = await this.contract.invite(event.args!.key)
 
         const invite: Invite = {
@@ -103,11 +110,11 @@ export class F0 {
   authTuple(key: string, address: string): F0Contract.AuthStruct {
     key = key ?? PUBLIC_INVITE
 
-    if (!this.data) {
+    if (!this.#data) {
       throw new Error('Data is not fetched')
     }
 
-    const invite = this.data.invites.find((i) => i.key === key)
+    const invite = this.#data.invites.find((i) => i.key === key)
 
     if (!invite) {
       throw new Error(`Unknown invite: ${key}`)
@@ -115,7 +122,7 @@ export class F0 {
 
     if (!invite.list) {
       return {
-        key: [],
+        key,
         proof: [],
       }
     }

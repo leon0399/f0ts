@@ -20,5 +20,5 @@ export interface Invite {
   name?: string
   cid?: string
   list?: InviteList
-  condition?: InviteCondition
+  condition: InviteCondition
 }
