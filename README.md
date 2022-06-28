@@ -1,5 +1,17 @@
 # Factoria F0 TypeScript
 
+<p>
+  <a href="https://www.npmjs.com/package/f0ts">
+    <img src="https://img.shields.io/npm/v/f0ts?colorA=21262d&colorB=161b22&style=flat" alt="Version">
+  </a>
+  <a href="/LICENSE">
+    <img src="https://img.shields.io/npm/l/f0ts?colorA=21262d&colorB=161b22&style=flat" alt="License">
+  </a>
+  <a href="https://www.npmjs.com/package/f0ts">
+    <img src="https://img.shields.io/npm/dm/f0ts?colorA=21262d&colorB=161b22&style=flat" alt="Downloads per month">
+  </a>
+</p>
+
 ## Installing
 
 ```sh

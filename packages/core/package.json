@@ -1,5 +1,5 @@
 {
-  "name": "@f0ts/core",
+  "name": "f0ts",
   "version": "0.0.1",
   "description": "Factoria F0 TypeScript helpers",
   "keywords": [
@@ -8,15 +8,23 @@
     "dapps",
     "web3"
   ],
+  "homepage": "https://github.com/leon0399/f0ts/tree/master/packages/core",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leon0399/f0ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leon0399/f0ts/issues"
+  },
   "sideEffects": false,
-  "main": "dist/f0ts-core.cjs.js",
-  "module": "dist/f0ts-core.esm.js",
-  "types": "dist/f0ts-core.cjs.d.ts",
+  "main": "dist/f0ts.cjs.js",
+  "module": "dist/f0ts.esm.js",
+  "types": "dist/f0ts.cjs.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "module": "./dist/f0ts-core.esm.js",
-      "default": "./dist/f0ts-core.cjs.js"
+      "module": "./dist/f0ts.esm.js",
+      "default": "./dist/f0ts.cjs.js"
     }
   },
   "preconstruct": {
