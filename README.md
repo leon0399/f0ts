@@ -12,6 +12,8 @@
   </a>
 </p>
 
+> TypeScript helpers for [F0](https://open.factoria.app/) contracts
+
 ## Installing
 
 ```sh
@@ -55,3 +57,7 @@ const tokenIds = await mintTx.wait() // wait for TX to succeed
 
 console.log(tokenIds) // [ 15, 16, 17, 18, 19 ]
 ```
+
+## Credits
+
+- https://github.com/factoria-org/f0js
