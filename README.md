@@ -12,7 +12,7 @@
   </a>
 </p>
 
-> TypeScript helpers for [F0](https://open.factoria.app/) contracts
+> TypeScript helpers for [Factoria F0](https://open.factoria.app/) contracts
 
 ## Installing
 
